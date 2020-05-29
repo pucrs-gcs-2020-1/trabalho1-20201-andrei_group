@@ -25,5 +25,5 @@ const openNewOperatorDialog = () => {
 const addOperator = (operatorName) => {
     const operator = { name: operatorName, intials: getInitials(operatorName) }
     OPERATORS.push(operator);
-    addToDropdown(operator);
+    addToDropdown('operatorsSelection', operator, () => operator.name);
 }

@@ -2,19 +2,37 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <script src="js/table.js" ></script>
+    <script src="js/account.js" ></script>
     <script src="js/initSetup.js" ></script>
     <script src="js/operatorState.js" ></script>
 </head>
 <body>
-    <script>
-    </script>
 
     <h1 id="welcome"> </h1>
 
-    <label for="operatorsSelection"> Mude de operador </label>
+    <label for="operatorsSelection"> Mude de operador: </label>
     <select onchange="changeOperator()" name="operatorsSelection" id="operatorsSelection">
     </select>
 
-    <button onclick="openNewOperatorDialog()"> Cadastrar Operador </button>
+    <button onclick="openNewOperatorDialog()"> + Cadastrar Operador </button>
+    
+    <br/>
+    
+    <label for="accountSelection"> Selecione a conta: </label>
+    <select onchange="changeAccount()" name="accountSelection" id="accountSelection">
+    </select>
+
+
+    <p id="accountMessage"></p>
+    <table id="content-table">
+        <tr>
+            <th>Data</th>
+            <th>Operador</th>
+            <th>NroDoc</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+        </tr>
+    </table>
 </body>
 </html>
