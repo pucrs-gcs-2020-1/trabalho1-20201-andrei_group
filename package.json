@@ -1,0 +1,19 @@
+{
+  "name": "trabalho1-20201-andrei_group",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pucrs-gcs-2020-1/trabalho1-20201-andrei_group.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pucrs-gcs-2020-1/trabalho1-20201-andrei_group/issues"
+  },
+  "homepage": "https://github.com/pucrs-gcs-2020-1/trabalho1-20201-andrei_group#readme"
+}
