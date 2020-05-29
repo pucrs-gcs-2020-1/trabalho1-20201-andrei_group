@@ -1,11 +1,18 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <script src="js/initSetup.js" ></script>
+    <script src="js/operatorState.js" ></script>
 </head>
 <body>
     <script>
     </script>
 
-    <h1 id="welcome""> Bem vindo </h1>
+    <h1 id="welcome"> </h1>
+
+    <label for="operatorsSelection"> Mude de operador </label>
+    <select onchange="changeOperator()" name="operatorsSelection" id="operatorsSelection">
+    </select>
 </body>
 </html>
