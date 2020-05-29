@@ -12,7 +12,18 @@ const getOperatorSelection = () => {
     return document.getElementById("operatorsSelection");
 }
 
-const updateWelcomeMessage = (operator) => {
-    const welcome = document.getElementById('welcome');
-    welcome.innerHTML = `Boas vindas, ${operator.name}`
+const getInitials = (name) => {
+    var initials = name.match(/\b\w/g) || [];
+    return ((initials.shift() || '') + (initials.pop() || '')).toUpperCase();
+}
+
+const openNewOperatorDialog = () => {
+    const name = window.prompt("Nome do operador a ser adicionado: ");
+    addOperator(name);
+}
+
+const addOperator = (operatorName) => {
+    const operator = { name: operatorName, intials: getInitials(operatorName) }
+    OPERATORS.push(operator);
+    addToDropdown(operator);
 }

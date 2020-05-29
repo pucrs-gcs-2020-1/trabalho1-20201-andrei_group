@@ -8,6 +8,11 @@ const ACCOUNTS = [
     {}
 ]
 
+const updateWelcomeMessage = (operator) => {
+    const welcome = document.getElementById('welcome');
+    welcome.innerHTML = `Boas vindas, ${operator.name}`
+}
+
 const addToDropdown = (operator) => {
     const operatorSelection = document.getElementById('operatorsSelection')
     const opt = document.createElement('option');
