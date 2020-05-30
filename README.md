@@ -28,15 +28,15 @@ Tags:
 
 É utilizado Trunk-based development para o fluxo de integração e gerenciamento de software. Para mantermos o estado da aplicação sempre verde (rodando sem problemas) é necessário que tenhamos *small commits* e efetuando *integração contínua* com nossa trunk (branch dev).
 
-Caso seja realmente necessário criar uma branch, é preciso que tenha *vida curta*  e não dure mais do que 3 dias.
+Caso seja realmente necessário criar uma branch, é preciso que esta tenha *vida curta* e não dure mais do que 3 dias.
 
-Para ser efetuada uma *release* é necessárioa  criação de um Pull Request dev > master e uma vez mergeada, deverá ser criada uma release da versão no github.
+Para ser efetuada uma *release* é necessária a criação de um Pull Request dev > master e uma vez mergeada, deverá ser criada uma release da versão no github.
 
  
 ---
 
 #### Como rodar a aplicação
 
-Sendo uma aplicação Wen básica, é necessário apenas abrir em um browser o arquivo `index.html` dentro da pasta `src/`.
+Sendo uma aplicação We básica, é necessário apenas abrir em um browser o arquivo `index.html` que está dentro da pasta `src/`.
 
 
