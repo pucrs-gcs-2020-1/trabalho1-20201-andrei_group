@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <script src="js/table.js" ></script>
+    <script src="js/transaction.js" ></script>
     <script src="js/account.js" ></script>
     <script src="js/initSetup.js" ></script>
     <script src="js/operatorState.js" ></script>
@@ -27,12 +28,12 @@
     <button onclick="dispatch('addAccount')"> + Nova conta </button>
 
     <p id="accountMessage"></p>
-    <table id="content-table">
+    <table id="content-table" style="border: 2px solid black; border-collapse: collapse; text-align: center; min-width: 60%">
         <tr>
             <th>Data</th>
             <th>Operador</th>
             <th>NroDoc</th>
-            <th>Descrição</th>
+            <th colspan="3">Descrição</th>
             <th>Valor</th>
         </tr>
     </table>
