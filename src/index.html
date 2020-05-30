@@ -34,5 +34,24 @@
     </table>
 
     <p>SALDO TOTAL: <span id="totalAmount"> </span></p>
+
+    <br/>
+
+    <h2> Nova Movimentação: </h2>
+    
+    <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100px">
+        <div>
+
+            <label for="inpt-amount" > Valor: </label>
+            <input id="inpt-amount" name="inpt-amount" type="number" min="0" max="100000" />
+        </div>
+        <div>
+            <label for="inpt-to-acc"> Para conta: </label>
+            <select onchange="dispatch('transactionAccSelected')" name="inpt-to-acc" id="inpt-to-acc">
+            </select>
+        </div>
+        <button style="width: 150px" onclick="dispatch('makeTransaction')"> Confirmar </button>
+
+    </div>
 </body>
 </html>
