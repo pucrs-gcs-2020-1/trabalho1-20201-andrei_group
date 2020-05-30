@@ -23,23 +23,43 @@ const getTransactionValue = () => {
     return Number(inptAmount.value);
 }
 
+const getTransactionDescription= () => {
+    const inptDescription = document.getElementById('inpt-description');
+    return inptDescription.value;
+}
+
 const hasEnoughMoney = (account, value) => {
     return account.getTotalAmount() >= value
 }
 
 window.addEventListener('makeTransaction', () => {
+    const description = getTransactionDescription();
     const operator = getOperator();
     const account = getSelectedAccount();
     const receiverAccount = getReceiverAccount();
     const value = getTransactionValue();
 
+    if (value <= 0) {
+        window.alert("Você precisa digitar um valor para a transferencia. Tente novamente.");
+        return;
+    }
     if (!hasEnoughMoney(account, value)) {
         window.alert("Você não possui dinheiro suficiente :(");
         return;
     }
 
-    const withdrawTransaction = buildTransaction({ description: 'eu quis', operator, value: -value })
-    const depositTransaction = buildTransaction({ description: 'eu quis', operator, value })
+    if (!receiverAccount) {
+        window.alert("Você precisa escolher uma conta destinatária. Tente novamente.");
+        return;
+    }
+
+    if (!description.length) {
+        window.alert("A descrição é obrigatória. Tente novamente.");
+        return;
+    }
+
+    const withdrawTransaction = buildTransaction({ description, operator, value: -value })
+    const depositTransaction = buildTransaction({ description, operator, value })
     
     account.transactions.push(withdrawTransaction);
     receiverAccount.transactions.push(depositTransaction);
