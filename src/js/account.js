@@ -5,7 +5,7 @@ const buildAccount = (operator, transactions) => {
         createdAt: new Date(),
         createdBy: operator,
         transactions: transactions || [],
-        getTotalAmount(){
+        getCurrentAmount(){
             return calcTotalCash(this.transactions);
         },
         getDate() {
@@ -40,6 +40,8 @@ const addAccount = () => {
     ACCOUNTS.push(account);
     addToDropdown('accountSelection', account, () => `Cod: ${account.id} - Criado por: ${account.createdBy.name}`);
     addToDropdown('receiverAcc', account, () => `Cod: ${account.id}`);
+    
+    dispatch('updateInformTable');
 }
 
 window.addEventListener('addAccount', () => {
