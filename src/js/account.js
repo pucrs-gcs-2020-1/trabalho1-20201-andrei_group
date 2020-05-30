@@ -25,7 +25,21 @@ const getSelectedAccount = () => {
    return ACCOUNTS.find(ac => ac.id === parseInt(id));
 }
 const changeAccount = () => {
-    const account = getSelectedAccount();
-    const message = getAccountMessage();
-    message.innerHTML = `Conta ${account.id}, criada por ${account.createdBy.name} (${account.createdBy.initials}) em ${account.getDate()}`
+    
+}
+
+const addAccount = () => {
+    const operator = getOperator();
+    const account = buildAccount(operator);
+    window.alert(`Conta criada com sucesso!\nCod Conta: ${account.id}`);
+    ACCOUNTS.push(account);
+    dispatch('updateAccount');
+}
+
+window.addEventListener('addAccount', () => {
+    addAccount()
+})
+
+const updateAccountSelection = () => {
+
 }

@@ -12,17 +12,19 @@
     <h1 id="welcome"> </h1>
 
     <label for="operatorsSelection"> Mude de operador: </label>
-    <select onchange="changeOperator()" name="operatorsSelection" id="operatorsSelection">
+    <select onchange="dispatch('updateSelectedOperator')" name="operatorsSelection" id="operatorsSelection">
     </select>
 
-    <button onclick="openNewOperatorDialog()"> + Cadastrar Operador </button>
+    <button onclick="dispatch('addOperator')"> + Cadastrar Operador </button>
     
     <br/>
     
     <label for="accountSelection"> Selecione a conta: </label>
-    <select onchange="changeAccount()" name="accountSelection" id="accountSelection">
+    <select onchange="dispatch('updateSelectedAccount')" name="accountSelection" id="accountSelection">
     </select>
 
+    <br/>
+    <button onclick="dispatch('addAccount')"> + Nova conta </button>
 
     <p id="accountMessage"></p>
     <table id="content-table">

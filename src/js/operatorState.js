@@ -4,8 +4,8 @@ const changeOperator = (va) => {
 }
 
 const getOperator = () => {
-    const index = getOperatorSelection().value;
-    return OPERATORS[index];
+    const id = getOperatorSelection().value;
+    return OPERATORS.find(op => op.id === parseInt(id))
 }
 
 const getOperatorSelection = () => {
@@ -23,7 +23,14 @@ const openNewOperatorDialog = () => {
 }
 
 const addOperator = (operatorName) => {
-    const operator = { name: operatorName, intials: getInitials(operatorName) }
+    const operator = { id:OPERATORS.length +1, name: operatorName, intials: getInitials(operatorName) }
     OPERATORS.push(operator);
     addToDropdown('operatorsSelection', operator, () => operator.name);
 }
+
+window.addEventListener('addOperator', () => {
+    const name = window.prompt("Nome do operador a ser adicionado: ");
+    if (name) {
+        addOperator(name)
+    }
+})

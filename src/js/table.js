@@ -1,3 +1,12 @@
+window.addEventListener('updateContentTable', () => {
+    ACCOUNTS.forEach(ac => addRow({
+        date: ac.getDate(),
+        operatorInitials: ac.createdBy.initials,
+        nroDoc: ac.id,
+        description: 'sei la',
+        value: ac.totalCash
+    }))
+})
 
 
 const contentTable = () => {
