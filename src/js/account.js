@@ -4,8 +4,10 @@ const buildAccount = (operator, transactions) => {
         id: intID(),
         createdAt: new Date(),
         createdBy: operator,
-        totalCash: transactions ? calcTotalCash(transactions) : 0.0,
         transactions: transactions || [],
+        getTotalAmount(){
+            return calcTotalCash(this.transactions);
+        },
         getDate() {
             const date = this.createdAt;
             const month = date.getMonth()+1
@@ -16,7 +18,7 @@ const buildAccount = (operator, transactions) => {
 
 const calcTotalCash = (transactions) => {
     return transactions.reduce((total, transaction) => {
-        return total + transaction.value;
+        return total+ transaction.value;
     }, 0)
 }
 

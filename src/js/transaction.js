@@ -4,7 +4,7 @@ const buildTransaction = ({ date, description, operator, value }) => {
         operator: operator,
         nroDoc: intID(),
         description: description,
-        value: value || 0.0,
+        value: value || 0.00,
         getDate() {
             const date = this.createdAt;
             const month = date.getMonth()+1

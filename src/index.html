@@ -17,7 +17,9 @@
     </select>
 
     <button onclick="dispatch('addOperator')"> + Cadastrar Operador </button>
+    <button onclick="dispatch('addAccount')"> + Nova conta </button>
     
+    <br/>
     <br/>
     
     <label for="accountSelection"> Selecione a conta: </label>
@@ -25,17 +27,12 @@
     </select>
 
     <br/>
-    <button onclick="dispatch('addAccount')"> + Nova conta </button>
+    <br/>
 
     <p id="accountMessage"></p>
     <table id="content-table" style="border: 2px solid black; border-collapse: collapse; text-align: center; min-width: 60%">
-        <tr>
-            <th>Data</th>
-            <th>Operador</th>
-            <th>NroDoc</th>
-            <th colspan="3">Descrição</th>
-            <th>Valor</th>
-        </tr>
     </table>
+
+    <p>SALDO TOTAL: <span id="totalAmount"> </span></p>
 </body>
 </html>

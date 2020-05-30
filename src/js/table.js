@@ -8,16 +8,24 @@ window.addEventListener('updateContentTable', () => {
             operatorInitials: transaction.operator.initials,
             nroDoc: transaction.nroDoc,
             description: transaction.description,
-            value: transaction.value
+            value: transaction.value.toFixed(2)
         })
     })
+
+    getTotalAmountLabel().innerHTML = account.getTotalAmount().toFixed(2);
 })
 
 window.addEventListener('clearTable', () => {
     const table = contentTable();
-    table.firstElementChild.innerHTML = "";
+    if (table.firstElementChild) {
+        table.firstElementChild.innerHTML = "";
+    }
 })
 
+
+const getTotalAmountLabel = () => {
+    return document.getElementById('totalAmount');
+}
 
 const contentTable = () => {
     return document.getElementById('content-table');
