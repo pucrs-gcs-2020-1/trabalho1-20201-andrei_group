@@ -1,10 +1,62 @@
+<!DOCTYPE html>
 <html>
-
+<head>
+    <meta charset="UTF-8">
+    <script src="js/table.js" ></script>
+    <script src="js/transaction.js" ></script>
+    <script src="js/account.js" ></script>
+    <script src="js/initSetup.js" ></script>
+    <script src="js/operatorState.js" ></script>
+</head>
 <body>
-    <script>
-    </script>
 
-    <h1> Ola mundo </h1>
+    <h1 id="welcome"> </h1>
+
+    <label for="operatorsSelection"> Mude de operador: </label>
+    <select onchange="dispatch('updateSelectedOperator')" name="operatorsSelection" id="operatorsSelection">
+    </select>
+
+    <button onclick="dispatch('addOperator')"> + Cadastrar Operador </button>
+    <button onclick="dispatch('addAccount')"> + Nova conta </button>
+    
+    <br/>
+    <br/>
+    
+    <label for="accountSelection"> Selecione a conta: </label>
+    <select onchange="dispatch('updateSelectedAccount')" name="accountSelection" id="accountSelection">
+    </select>
+
+    <br/>
+    <br/>
+
+    <p id="accountMessage"></p>
+    <table id="content-table" style="border: 2px solid black; border-collapse: collapse; text-align: center; min-width: 60%">
+    </table>
+
+    <p>SALDO TOTAL: <span id="totalAmount"> </span></p>
+
+    <br/>
+
+    <h2> Nova Movimentação: </h2>
+    
+    <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100px; width: 40%;">
+        <div>
+
+            <label for="inpt-amount" > Valor: </label>
+            <input id="inpt-amount" name="inpt-amount" type="number" min="0" max="100000" />
+        </div>
+        <div>
+            <label for="receiverAcc"> Para conta:           </label>
+            <select name="receiverAcc" id="receiverAcc">
+                    <option value="" selected disabled>Conta Destinatária</option>
+            </select>
+        </div>
+        <div>
+            <label for="inpt-description"> Descrição da transferência:</label>
+            <input id="inpt-description" name="inpt-description" type="text" maxlength="50" required/>
+        </div>
+        <button style="width: 150px" onclick="dispatch('makeTransaction')"> Confirmar </button>
+
+    </div>
 </body>
 </html>
-ç

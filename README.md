@@ -32,7 +32,7 @@ Caso seja realmente necessário criar uma branch, é preciso que tenha *vida cur
 
 Para ser efetuada uma *release* é necessárioa  criação de um Pull Request dev > master e uma vez mergeada, deverá ser criada uma release da versão no github.
 
-
+ 
 ---
 
 #### Como rodar a aplicação
