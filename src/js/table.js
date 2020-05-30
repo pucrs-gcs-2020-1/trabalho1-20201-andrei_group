@@ -1,6 +1,6 @@
 window.addEventListener('updateContentTable', () => {
-    dispatch('clearTable')
     const account = getSelectedAccount();
+    dispatch('clearTable')
     addHeader()
     account.transactions.forEach(transaction => {
         addRow({

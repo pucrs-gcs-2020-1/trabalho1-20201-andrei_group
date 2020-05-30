@@ -38,7 +38,8 @@ const addAccount = () => {
     const account = buildAccount(operator);
     window.alert(`Conta criada com sucesso!\nCod Conta: ${account.id}`);
     ACCOUNTS.push(account);
-    dispatch('updateAccount');
+    addToDropdown('accountSelection', account, () => `Cod: ${account.id} - Criado por: ${account.createdBy.name}`);
+    addToDropdown('receiverAcc', account, () => `Cod: ${account.id}`);
 }
 
 window.addEventListener('addAccount', () => {

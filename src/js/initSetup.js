@@ -48,6 +48,10 @@ window.addEventListener('updateOperators', () => {
     OPERATORS.forEach((op) => addToDropdown('operatorsSelection', op,  () => op.name));
 })
 
+window.addEventListener('transactionAccSelected', () => {
+    ACCOUNTS.forEach((ac) => addToDropdown('receiverAcc', ac,  () => `Cod: ${ac.id}`));
+})
+
 window.addEventListener('updateWelcome', ({ detail: data }) => {
     const welcome = document.getElementById('welcome');
     welcome.innerHTML = `Boas vindas, ${data.operator.name}!`
@@ -73,4 +77,5 @@ setTimeout(() => {
     dispatch('updateAccount')
     dispatch('updateWelcome', { operator: OPERATORS[0] })
     dispatch('updateSelectedAccount')
+    dispatch('transactionAccSelected')
 }, 10)

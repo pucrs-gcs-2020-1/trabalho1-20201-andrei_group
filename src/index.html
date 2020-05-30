@@ -46,8 +46,9 @@
             <input id="inpt-amount" name="inpt-amount" type="number" min="0" max="100000" />
         </div>
         <div>
-            <label for="inpt-to-acc"> Para conta: </label>
-            <select onchange="dispatch('transactionAccSelected')" name="inpt-to-acc" id="inpt-to-acc">
+            <label for="receiverAcc"> Para conta: </label>
+            <select name="receiverAcc" id="receiverAcc">
+                    <option value="" selected disabled>Conta Destinatária</option>
             </select>
         </div>
         <button style="width: 150px" onclick="dispatch('makeTransaction')"> Confirmar </button>
