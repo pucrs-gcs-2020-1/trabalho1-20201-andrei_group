@@ -29,7 +29,7 @@ const getTransactionDescription= () => {
 }
 
 const hasEnoughMoney = (account, value) => {
-    return account.getTotalAmount() >= value
+    return account.getCurrentAmount() >= value
 }
 
 window.addEventListener('makeTransaction', () => {
@@ -64,5 +64,6 @@ window.addEventListener('makeTransaction', () => {
     account.transactions.push(withdrawTransaction);
     receiverAccount.transactions.push(depositTransaction);
 
-    dispatch('updateContentTable')
+    dispatch('updateTransactionsTable')
+    dispatch('updateInformTable')
 })

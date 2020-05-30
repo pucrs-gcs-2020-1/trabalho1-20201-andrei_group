@@ -30,10 +30,10 @@
     <br/>
 
     <p id="accountMessage"></p>
-    <table id="content-table" style="border: 2px solid black; border-collapse: collapse; text-align: center; min-width: 60%">
+    <table id="transactions-table" style="border: 2px solid black; border-collapse: collapse; text-align: center; min-width: 60%">
     </table>
 
-    <p>SALDO TOTAL: <span id="totalAmount"> </span></p>
+    <p>SALDO ATUAL: <span id="currentAmount"> </span></p>
 
     <br/>
 
@@ -58,5 +58,14 @@
         <button style="width: 150px" onclick="dispatch('makeTransaction')"> Confirmar </button>
 
     </div>
+
+    <br/>
+
+    <h2> Relatório Geral das Contas: </h2>
+
+    <table id="inform-table" style="border: 2px solid black; border-collapse: collapse; text-align: center; min-width: 60%">
+    </table>
+
+    <p>SALDO GERAL: <span id="totalAmount"> </span></p>
 </body>
 </html>

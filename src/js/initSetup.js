@@ -66,7 +66,7 @@ window.addEventListener('updateSelectedAccount', () => {
     const account = getSelectedAccount();
     const message = getAccountMessage();
     message.innerHTML = `Conta ${account.id}, criada por ${account.createdBy.name} (${account.createdBy.initials}) em ${account.getDate()}`;
-    dispatch('updateContentTable')
+    dispatch('updateTransactionsTable')
 })
 
 const Event = (key, props) => new CustomEvent(key, { bubbles: true, detail: props }) 
@@ -78,4 +78,5 @@ setTimeout(() => {
     dispatch('updateWelcome', { operator: OPERATORS[0] })
     dispatch('updateSelectedAccount')
     dispatch('transactionAccSelected')
+    dispatch('updateInformTable')
 }, 10)
